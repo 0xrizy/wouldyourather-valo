@@ -1,7 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 
-const questionSchema = new Schema();
-({
+const questionSchema = new Schema({
   question: {
     type: String,
     required: true,
@@ -29,7 +28,17 @@ const questionSchema = new Schema();
   },
   category: {
     type: String,
-    enum: ["fun", "serious", "hypothetical", "silly", "philosophical"],
+    enum: [
+      "fun",
+      "serious",
+      "hypothetical",
+      "silly",
+      "philosophical",
+      "gameplay with friends",
+      "agents",
+      "gameplay",
+      "skins",
+    ],
     default: "fun",
   },
   createdAt: {
@@ -40,4 +49,4 @@ const questionSchema = new Schema();
 
 const Question = mongoose.model("Question", questionSchema);
 
-module.exports = Question;
+export default Question;

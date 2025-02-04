@@ -1,5 +1,8 @@
-import { connectDB } from "./config/db";
+import { connectDB } from "./config/db.js";
 import Question from "./models/questionModel.js";
+import dotenv from "dotenv";
+import mongoose from "mongoose";
+dotenv.config();
 const bulkQuestions = [
   {
     question:
@@ -267,17 +270,13 @@ const bulkQuestions = [
 ];
 async function addBulkQuestions() {
   try {
-    // Connect to the database
-    await connectDB();
-
-    // Insert bulk questions
+    await connectDB(); // Ensure the connection is established before proceeding
     const result = await Question.insertMany(bulkQuestions);
     console.log(`${result.length} questions added successfully.`);
   } catch (err) {
     console.error("Error adding bulk questions:", err);
   } finally {
-    // Close the database connection
-    mongoose.connection.close();
+    mongoose.connection.close(); // Close the DB connection
   }
 }
 
