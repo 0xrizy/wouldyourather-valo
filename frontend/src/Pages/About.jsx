@@ -14,7 +14,7 @@ const AboutPage = () => {
 
           <div className="flex justify-center space-x-4">
             <a
-              href="https://github.com/0xrizy"
+              href="https://github.com/0xrizy/wouldyourather-valo"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200"
@@ -23,7 +23,7 @@ const AboutPage = () => {
             </a>
 
             <a
-              href="https://buymeacoffee.com/rizulthakur"
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors duration-200"
