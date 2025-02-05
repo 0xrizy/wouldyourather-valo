@@ -14,7 +14,9 @@ const QuestionPage = () => {
   useEffect(() => {
     const fetchQuestion = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/${id}`);
+        const response = await axios.get(
+          `https://wouldyourather-valo.onrender.com/api/${id}`
+        );
         setQuestion(response.data);
         setVoted(false); // Reset voting state for new question
       } catch (error) {
@@ -50,7 +52,7 @@ const QuestionPage = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/vote/${id}`,
+        `https://wouldyourather-valo.onrender.com/api/vote/${id}`,
         { option: selectedOption }
       );
 

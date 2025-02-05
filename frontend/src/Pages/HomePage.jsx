@@ -7,7 +7,9 @@ function Homepage() {
   const handleGetStarted = async () => {
     try {
       // Fetch random question from backend API using Axios
-      const response = await axios.get("http://localhost:5000/api/v1/random");
+      const response = await axios.get(
+        "https://wouldyourather-valo.onrender.com/api/v1/random"
+      );
 
       if (response.data?._id) {
         // Navigate to the QuestionPage with the random question ID
