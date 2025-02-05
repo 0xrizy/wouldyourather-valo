@@ -1,17 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+
 function Homepage() {
   const navigate = useNavigate();
 
   const handleGetStarted = async () => {
     try {
       // Fetch random question from backend API using Axios
-      const response = await axios.get("http://localhost:5000/random"); // Make sure the URL matches your backend endpoint
-      const data = response.data;
+      const response = await axios.get("http://localhost:5000/api/v1/random");
 
-      if (data?._id) {
+      if (response.data?._id) {
         // Navigate to the QuestionPage with the random question ID
-        navigate(`/question/${data._id}`);
+        navigate(`/question/${response.data._id}`);
       } else {
         alert("No questions available!");
       }
@@ -26,7 +26,7 @@ function Homepage() {
       {/* Background Image with overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/valorant-bg.jpeg" // Replace with your image path
+          src="/valorant-bg.jpeg"
           alt="Valorant Background"
           className="w-full h-full object-cover opacity-25"
         />
@@ -57,4 +57,5 @@ function Homepage() {
     </div>
   );
 }
+
 export default Homepage;

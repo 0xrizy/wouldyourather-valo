@@ -268,6 +268,14 @@ const bulkQuestions = [
     category: "gameplay with friends",
   },
 ];
+const getRandomVotes = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1)) + min;
+
+bulkQuestions.forEach((question) => {
+  question.votes.option1 = getRandomVotes(10, 500);
+  question.votes.option2 = getRandomVotes(10, 500);
+});
+
 async function addBulkQuestions() {
   try {
     await connectDB(); // Ensure the connection is established before proceeding
